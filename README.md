@@ -1,7 +1,7 @@
 # NexusCRM — B2B SaaS Customer Management Platform
 ### A Full-Lifecycle Project Management Case Study
 
-Live site: **https://Mrunali121.github.io/**
+Live site: **https://mrunali121.github.io/nexuscrm-pm-case-study/**
 
 **Role:** Project Manager (simulated project)
 **Methodology:** Hybrid — Waterfall-style initiation & planning, Scrum execution (2-week sprints)
