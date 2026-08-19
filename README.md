@@ -1,6 +1,8 @@
 # NexusCRM — B2B SaaS Customer Management Platform
 ### A Full-Lifecycle Project Management Case Study
 
+Live site: **https://Mrunali121.github.io/**
+
 **Role:** Project Manager (simulated project)
 **Methodology:** Hybrid — Waterfall-style initiation & planning, Scrum execution (2-week sprints)
 **Duration:** 18 weeks (16-week build across 2 releases + 2-week parallel-run buffer)
