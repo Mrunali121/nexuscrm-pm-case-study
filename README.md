@@ -7,7 +7,7 @@
 **Team:** 9 people (PM, 2 Backend Dev, 1 Frontend Dev, 1 Designer, 2 QA, 1 DevOps, plus part-time Data Privacy Officer)
 
 ## Live website
-Open `index.html` through GitHub Pages: https://mrunali121.github.io/NexusCRM-PM/ . Every document has its own page, and the backlog page has filters. Rebuild with `pip install markdown` then `python build_site.py`.
+Open `index.html` through GitHub Pages: [https://mrunali121.github.io/NexusCRM-PM/](https://mrunali121.github.io/nexuscrm-pm-case-study/) . Every document has its own page, and the backlog page has filters. Rebuild with `pip install markdown` then `python build_site.py`.
 
 ## About this repository
 
