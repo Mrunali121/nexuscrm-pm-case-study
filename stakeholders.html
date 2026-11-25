@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stakeholder Analysis | NexusCRM Case Study</title>
+<meta name="description" content="Who cares, how much power they hold, and how each is engaged.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,600;0,700;1,600&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site.css">
+</head>
+<body>
+<header class="topbar"><a class="brand" href="index.html">Nexus<b>CRM</b></a>
+<nav aria-label="Main"><a href="index.html">Overview</a><a href="sprint-03.html">Sprint 3</a><a href="sprint-06.html">Sprint 6</a><a href="risks.html">Risks</a><a href="retrospective.html">Retrospective</a></nav>
+<a class="cta" href="https://github.com/Mrunali121/NexusCRM-PM" target="_blank" rel="noopener">GitHub</a></header>
+<div class="layout">
+<aside class="rail" aria-label="Lifecycle documents"><details open><summary>All 18 documents</summary><h4>Initiate</h4><a href="business-case.html"><i>01</i>Business case</a><a href="charter.html"><i>02</i>Project charter</a><a href="stakeholders.html" aria-current="page"><i>03</i>Stakeholders</a><a href="raci.html"><i>04</i>RACI matrix</a><h4>Plan</h4><a href="requirements.html"><i>05</i>Requirements</a><a href="wbs.html"><i>06</i>WBS</a><a href="backlog.html"><i>07</i>Product backlog</a><a href="roadmap.html"><i>08</i>Roadmap</a><a href="release-plan.html"><i>09</i>Release plan</a><h4>Execute</h4><a href="sprints.html"><i>10</i>Sprint plans</a><a href="sprint-03.html"><i>10a</i>Sprint 3: a risk happens</a><a href="sprint-06.html"><i>10b</i>Sprint 6: a scope trade-off</a><h4>Control</h4><a href="risks.html"><i>11</i>Risks & issues</a><a href="dependencies.html"><i>12</i>Dependencies</a><a href="status-reports.html"><i>13</i>Status reports</a><h4>Close</h4><a href="uat.html"><i>14</i>UAT plan</a><a href="go-live.html"><i>15</i>Go-live checklist</a><a href="retrospective.html"><i>16</i>Retrospective</a></details></aside>
+<main>
+<header class="pagehead"><div class="eyebrow">Initiate · Document 03</div><h1>Stakeholder Analysis</h1><p>Who cares, how much power they hold, and how each is engaged.</p></header><div class="doc"><h2>Stakeholder Register</h2>
+<table>
+<thead>
+<tr>
+<th>Stakeholder</th>
+<th>Role</th>
+<th>Interest</th>
+<th>Power</th>
+<th>Engagement Strategy</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>VP Sales</td>
+<td>Sponsor</td>
+<td>High — owns the business outcome</td>
+<td>High</td>
+<td>Weekly status report; decision authority on scope trade-offs</td>
+</tr>
+<tr>
+<td>Engineering Director</td>
+<td>Steering Committee</td>
+<td>High — resourcing &amp; technical risk</td>
+<td>High</td>
+<td>Release-boundary go/no-go meetings; escalation path for technical blockers</td>
+</tr>
+<tr>
+<td>Head of Customer Success</td>
+<td>Steering Committee</td>
+<td>High — depends on this for CS automation initiative</td>
+<td>High</td>
+<td>Consulted on Release 2 reporting/integration requirements</td>
+</tr>
+<tr>
+<td>Data Privacy Officer</td>
+<td>Compliance advisor</td>
+<td>Medium — GDPR compliance sign-off</td>
+<td>High (veto on go-live)</td>
+<td>Consulted at data model design and before each release go-live</td>
+</tr>
+<tr>
+<td>Sales Team (14 people)</td>
+<td>End users</td>
+<td>High — daily tool</td>
+<td>Low</td>
+<td>Represented via 2 Sales power-users in requirements workshops and UAT</td>
+</tr>
+<tr>
+<td>Customer Success Team</td>
+<td>End users</td>
+<td>Medium — reporting consumers</td>
+<td>Low</td>
+<td>Included in UAT for Release 2 reporting features</td>
+</tr>
+<tr>
+<td>IT/DevOps</td>
+<td>Infrastructure owner</td>
+<td>Medium — hosting &amp; security</td>
+<td>Medium</td>
+<td>Involved from Sprint 1 for environment setup; owns go-live checklist items</td>
+</tr>
+<tr>
+<td>Beta Customer Advisory Group (3 external accounts)</td>
+<td>Informal feedback source</td>
+<td>Low — informational only</td>
+<td>Low</td>
+<td>Informed post-launch; no formal engagement during build</td>
+</tr>
+</tbody>
+</table>
+<h2>Power/Interest Grid</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th><strong>Low Interest</strong></th>
+<th><strong>High Interest</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>High Power</strong></td>
+<td>IT/DevOps <em>(monitor, keep satisfied)</em></td>
+<td>VP Sales, Engineering Director, Data Privacy Officer <em>(manage closely)</em></td>
+</tr>
+<tr>
+<td><strong>Low Power</strong></td>
+<td>Beta Customer Advisory Group <em>(monitor)</em></td>
+<td>Sales Team, Customer Success Team <em>(keep informed, involve in UAT)</em></td>
+</tr>
+</tbody>
+</table>
+<h2>Key Engagement Decisions</h2>
+<ul>
+<li>The <strong>Data Privacy Officer</strong> sits in the "manage closely" quadrant despite not
+  being part of daily delivery — their sign-off is a hard gate before either
+  release can go live, so they're looped in at design time, not just at the end.</li>
+<li><strong>Sales Team</strong> power-users were embedded in requirements workshops rather than
+  only consulted at UAT, since early input from actual daily users caught several
+  workflow assumptions that would have failed adoption post-launch (see
+  <a href="requirements.html">Requirements</a>, FR-09).</li>
+</ul><div class="pager"><a href="charter.html">&larr; Project charter</a><a href="raci.html">RACI matrix &rarr;</a></div></div>
+<footer><span>NexusCRM is a self-directed portfolio case study. Company, team and data are illustrative.</span><span><a href="https://github.com/Mrunali121/NexusCRM-PM" target="_blank" rel="noopener">GitHub</a> · <a href="https://mrunali121.github.io/" target="_blank" rel="noopener">Portfolio</a></span></footer>
+</main>
+</div>
+</body>
+</html>

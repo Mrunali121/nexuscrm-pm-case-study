@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Requirements | NexusCRM Case Study</title>
+<meta name="description" content="18 functional and 12 non-functional requirements from four workshops.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,600;0,700;1,600&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site.css">
+</head>
+<body>
+<header class="topbar"><a class="brand" href="index.html">Nexus<b>CRM</b></a>
+<nav aria-label="Main"><a href="index.html">Overview</a><a href="sprint-03.html">Sprint 3</a><a href="sprint-06.html">Sprint 6</a><a href="risks.html">Risks</a><a href="retrospective.html">Retrospective</a></nav>
+<a class="cta" href="https://github.com/Mrunali121/NexusCRM-PM" target="_blank" rel="noopener">GitHub</a></header>
+<div class="layout">
+<aside class="rail" aria-label="Lifecycle documents"><details open><summary>All 18 documents</summary><h4>Initiate</h4><a href="business-case.html"><i>01</i>Business case</a><a href="charter.html"><i>02</i>Project charter</a><a href="stakeholders.html"><i>03</i>Stakeholders</a><a href="raci.html"><i>04</i>RACI matrix</a><h4>Plan</h4><a href="requirements.html" aria-current="page"><i>05</i>Requirements</a><a href="wbs.html"><i>06</i>WBS</a><a href="backlog.html"><i>07</i>Product backlog</a><a href="roadmap.html"><i>08</i>Roadmap</a><a href="release-plan.html"><i>09</i>Release plan</a><h4>Execute</h4><a href="sprints.html"><i>10</i>Sprint plans</a><a href="sprint-03.html"><i>10a</i>Sprint 3: a risk happens</a><a href="sprint-06.html"><i>10b</i>Sprint 6: a scope trade-off</a><h4>Control</h4><a href="risks.html"><i>11</i>Risks & issues</a><a href="dependencies.html"><i>12</i>Dependencies</a><a href="status-reports.html"><i>13</i>Status reports</a><h4>Close</h4><a href="uat.html"><i>14</i>UAT plan</a><a href="go-live.html"><i>15</i>Go-live checklist</a><a href="retrospective.html"><i>16</i>Retrospective</a></details></aside>
+<main>
+<header class="pagehead"><div class="eyebrow">Plan · Document 05</div><h1>Requirements</h1><p>18 functional and 12 non-functional requirements from four workshops.</p></header><div class="doc"><h2>Functional Requirements — NexusCRM Platform</h2><p>Gathered via 4 requirements workshops with Sales, Customer Success, and Engineering
+(Weeks 1–2), and prioritized with the Product Owner role (held by the PM for this
+project).</p>
+<h2>Authentication &amp; Permissions</h2>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Requirement</th>
+<th>Priority</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>FR-01</td>
+<td>Users authenticate via company SSO (existing Google Workspace)</td>
+<td>Must</td>
+</tr>
+<tr>
+<td>FR-02</td>
+<td>Three role tiers: Admin, Sales Rep, Read-only (Customer Success)</td>
+<td>Must</td>
+</tr>
+<tr>
+<td>FR-03</td>
+<td>Admins can deactivate a user without deleting their historical activity log</td>
+<td>Must</td>
+</tr>
+</tbody>
+</table>
+<h2>Contact &amp; Account Management</h2>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Requirement</th>
+<th>Priority</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>FR-04</td>
+<td>Create, edit, and merge contact records, with a duplicate-detection warning on save</td>
+<td>Must</td>
+</tr>
+<tr>
+<td>FR-05</td>
+<td>Contacts can be grouped under a parent Account (company) record</td>
+<td>Must</td>
+</tr>
+<tr>
+<td>FR-06</td>
+<td>Full activity history (calls, emails, notes) visible on a contact's timeline</td>
+<td>Must</td>
+</tr>
+<tr>
+<td>FR-07</td>
+<td>Bulk import of contacts via CSV with field mapping</td>
+<td>Should</td>
+</tr>
+</tbody>
+</table>
+<h2>Deal Pipeline</h2>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Requirement</th>
+<th>Priority</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>FR-08</td>
+<td>Kanban-style pipeline view with configurable deal stages</td>
+<td>Must</td>
+</tr>
+<tr>
+<td>FR-09</td>
+<td>Drag-and-drop stage changes must NOT require a page reload — flagged by Sales power-users as a dealbreaker for daily adoption during requirements workshops</td>
+<td>Must</td>
+</tr>
+<tr>
+<td>FR-10</td>
+<td>Deal value roll-up visible per stage and per sales rep</td>
+<td>Must</td>
+</tr>
+<tr>
+<td>FR-11</td>
+<td>Won/lost reason capture on deal close</td>
+<td>Should</td>
+</tr>
+</tbody>
+</table>
+<h2>Reporting (Release 2)</h2>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Requirement</th>
+<th>Priority</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>FR-12</td>
+<td>Live pipeline dashboard replacing the manual monthly report</td>
+<td>Must</td>
+</tr>
+<tr>
+<td>FR-13</td>
+<td>Exportable reports (CSV, PDF) for leadership review</td>
+<td>Should</td>
+</tr>
+<tr>
+<td>FR-14</td>
+<td>Rep-level and team-level performance views</td>
+<td>Should</td>
+</tr>
+</tbody>
+</table>
+<h2>Integrations (Release 2)</h2>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Requirement</th>
+<th>Priority</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>FR-15</td>
+<td>Two-way email sync (send/receive logged against contact timeline)</td>
+<td>Must</td>
+</tr>
+<tr>
+<td>FR-16</td>
+<td>Zapier integration for at least 3 common triggers (new deal, stage change, deal won)</td>
+<td>Should</td>
+</tr>
+</tbody>
+</table>
+<h2>Data Migration</h2>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Requirement</th>
+<th>Priority</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>FR-17</td>
+<td>Guided migration tool from legacy database with duplicate resolution step</td>
+<td>Must</td>
+</tr>
+<tr>
+<td>FR-18</td>
+<td>Migration dry-run mode with a report before committing changes</td>
+<td>Must</td>
+</tr>
+</tbody>
+</table>
+<p>See <a href="requirements.html">Non-Functional Requirements</a> for performance,
+security, and compliance requirements.</p><h2>Non-Functional Requirements — NexusCRM Platform</h2><h2>Performance</h2>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Requirement</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>NFR-01</td>
+<td>Pipeline board loads in under 2 seconds for up to 2,000 active deals</td>
+</tr>
+<tr>
+<td>NFR-02</td>
+<td>Dashboard queries (Release 2) return in under 3 seconds at current data volume</td>
+</tr>
+</tbody>
+</table>
+<h2>Security &amp; Compliance</h2>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Requirement</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>NFR-03</td>
+<td>All customer data hosted on Meridian's existing EU infrastructure (data residency)</td>
+</tr>
+<tr>
+<td>NFR-04</td>
+<td>Role-based access control enforced at the API layer, not just the UI</td>
+</tr>
+<tr>
+<td>NFR-05</td>
+<td>Full audit log of record access and changes, retained per Meridian's data retention policy</td>
+</tr>
+<tr>
+<td>NFR-06</td>
+<td>Right-to-erasure requests supported via an admin-initiated data purge workflow</td>
+</tr>
+<tr>
+<td>NFR-07</td>
+<td>External security/GDPR audit must pass with no critical findings before Release 2 go-live</td>
+</tr>
+</tbody>
+</table>
+<h2>Reliability</h2>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Requirement</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>NFR-08</td>
+<td>99.5% uptime target during business hours (internal tool, not customer-facing)</td>
+</tr>
+<tr>
+<td>NFR-09</td>
+<td>Daily automated backups with a tested restore procedure</td>
+</tr>
+</tbody>
+</table>
+<h2>Usability</h2>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Requirement</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>NFR-10</td>
+<td>Core workflows (add contact, move deal stage, log activity) achievable in ≤ 3 clicks</td>
+</tr>
+<tr>
+<td>NFR-11</td>
+<td>Responsive web layout supporting desktop and tablet (mobile native explicitly out of scope)</td>
+</tr>
+</tbody>
+</table>
+<h2>Maintainability</h2>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Requirement</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>NFR-12</td>
+<td>API documented and versioned to support the Release 2 Zapier integration and any future integrations</td>
+</tr>
+</tbody>
+</table><div class="pager"><a href="raci.html">&larr; RACI matrix</a><a href="wbs.html">WBS &rarr;</a></div></div>
+<footer><span>NexusCRM is a self-directed portfolio case study. Company, team and data are illustrative.</span><span><a href="https://github.com/Mrunali121/NexusCRM-PM" target="_blank" rel="noopener">GitHub</a> · <a href="https://mrunali121.github.io/" target="_blank" rel="noopener">Portfolio</a></span></footer>
+</main>
+</div>
+</body>
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dependency Management | NexusCRM Case Study</title>
+<meta name="description" content="Four internal and four external dependencies.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,600;0,700;1,600&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site.css">
+</head>
+<body>
+<header class="topbar"><a class="brand" href="index.html">Nexus<b>CRM</b></a>
+<nav aria-label="Main"><a href="index.html">Overview</a><a href="sprint-03.html">Sprint 3</a><a href="sprint-06.html">Sprint 6</a><a href="risks.html">Risks</a><a href="retrospective.html">Retrospective</a></nav>
+<a class="cta" href="https://github.com/Mrunali121/NexusCRM-PM" target="_blank" rel="noopener">GitHub</a></header>
+<div class="layout">
+<aside class="rail" aria-label="Lifecycle documents"><details open><summary>All 18 documents</summary><h4>Initiate</h4><a href="business-case.html"><i>01</i>Business case</a><a href="charter.html"><i>02</i>Project charter</a><a href="stakeholders.html"><i>03</i>Stakeholders</a><a href="raci.html"><i>04</i>RACI matrix</a><h4>Plan</h4><a href="requirements.html"><i>05</i>Requirements</a><a href="wbs.html"><i>06</i>WBS</a><a href="backlog.html"><i>07</i>Product backlog</a><a href="roadmap.html"><i>08</i>Roadmap</a><a href="release-plan.html"><i>09</i>Release plan</a><h4>Execute</h4><a href="sprints.html"><i>10</i>Sprint plans</a><a href="sprint-03.html"><i>10a</i>Sprint 3: a risk happens</a><a href="sprint-06.html"><i>10b</i>Sprint 6: a scope trade-off</a><h4>Control</h4><a href="risks.html"><i>11</i>Risks & issues</a><a href="dependencies.html" aria-current="page"><i>12</i>Dependencies</a><a href="status-reports.html"><i>13</i>Status reports</a><h4>Close</h4><a href="uat.html"><i>14</i>UAT plan</a><a href="go-live.html"><i>15</i>Go-live checklist</a><a href="retrospective.html"><i>16</i>Retrospective</a></details></aside>
+<main>
+<header class="pagehead"><div class="eyebrow">Control · Document 12</div><h1>Dependency Management</h1><p>Four internal and four external dependencies.</p></header><div class="doc"><h2>Internal Dependencies (cross-team / cross-sprint)</h2>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Dependency</th>
+<th>Between</th>
+<th>Risk if delayed</th>
+<th>Tracking</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>D-01</td>
+<td>Data model design must be finalized before contact/deal stories can start</td>
+<td>Design phase → Sprint 1–3</td>
+<td>Rework across multiple sprints</td>
+<td>Locked at end of Design phase (Week 3), change-controlled after</td>
+</tr>
+<tr>
+<td>D-02</td>
+<td>Shared WebSocket service (real-time updates) used by both pipeline UI and future audit logging</td>
+<td>Sprint 3 (pipeline) ↔ Sprint 4 (audit log)</td>
+<td>Blocks pipeline drag-and-drop feature</td>
+<td>Flagged at Sprint 3 planning; materialized as Issue I-01, resolved via reordering</td>
+</tr>
+<tr>
+<td>D-03</td>
+<td>Reporting engine (Sprint 5) depends on deal/contact data model being stable from Release 1</td>
+<td>Release 1 → Release 2</td>
+<td>Reporting queries built against a moving schema</td>
+<td>Data model frozen at Release 1 go-live; any Release 2 schema change goes through change control</td>
+</tr>
+<tr>
+<td>D-04</td>
+<td>Email integration (Sprint 7) and Zapier integration (Sprint 8) both consume the same API layer</td>
+<td>Sprint 7 → Sprint 8</td>
+<td>Zapier work blocked if API contract changes late</td>
+<td>API contract designed upfront (WBS 3.3) and versioned per NFR-12</td>
+</tr>
+</tbody>
+</table>
+<h2>External Dependencies</h2>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Dependency</th>
+<th>Vendor/Party</th>
+<th>Risk if delayed</th>
+<th>Tracking</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>D-05</td>
+<td>Email provider API sandbox access for integration development</td>
+<td>Email API vendor</td>
+<td>Sprint 7 work blocked at the start</td>
+<td>Requested in Week 8, confirmed by Week 9 — built in as a buffer before Sprint 7 start</td>
+</tr>
+<tr>
+<td>D-06</td>
+<td>External GDPR/security audit firm availability</td>
+<td>Third-party audit firm</td>
+<td>Release 2 go-live blocked (audit is a hard gate per NFR-07)</td>
+<td>Booked in Week 6, scheduled for Week 15 with 3-week buffer before go-live</td>
+</tr>
+<tr>
+<td>D-07</td>
+<td>Legal review of third-party PDF rendering library license</td>
+<td>Meridian Legal</td>
+<td>Report export feature delayed</td>
+<td>Materialized as Issue I-02; resolved via scope deferral rather than blocking the sprint</td>
+</tr>
+<tr>
+<td>D-08</td>
+<td>Legacy database export access for migration tooling</td>
+<td>Internal IT/DevOps</td>
+<td>Data migration development blocked</td>
+<td>Access granted in Week 9, ahead of Sprint 8 need</td>
+</tr>
+</tbody>
+</table>
+<h2>How dependencies are managed</h2>
+<ul>
+<li>Every dependency is logged at the point it's identified — usually at sprint
+  planning or design — with an owner and a "risk if delayed" statement, not just
+  a date.</li>
+<li>Dependencies scoring as high-impact (D-02, D-03, D-06) get an explicit callout
+  at every sprint planning session until resolved, cross-referenced with the
+  <a href="risks.html">Risk &amp; Issue Register</a>.</li>
+<li>External dependencies (vendor/legal/audit) are booked with deliberate buffer
+  time rather than scheduled back-to-back against the date they're needed —
+  this buffer is what absorbed D-06 and D-07 without affecting the roadmap.</li>
+</ul><div class="pager"><a href="risks.html">&larr; Risks & issues</a><a href="status-reports.html">Status reports &rarr;</a></div></div>
+<footer><span>NexusCRM is a self-directed portfolio case study. Company, team and data are illustrative.</span><span><a href="https://github.com/Mrunali121/NexusCRM-PM" target="_blank" rel="noopener">GitHub</a> · <a href="https://mrunali121.github.io/" target="_blank" rel="noopener">Portfolio</a></span></footer>
+</main>
+</div>
+</body>
+</html>

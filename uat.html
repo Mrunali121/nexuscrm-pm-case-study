@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UAT Plan | NexusCRM Case Study</title>
+<meta name="description" content="Entry and exit criteria, ten test scenarios, severity classes.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,600;0,700;1,600&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site.css">
+</head>
+<body>
+<header class="topbar"><a class="brand" href="index.html">Nexus<b>CRM</b></a>
+<nav aria-label="Main"><a href="index.html">Overview</a><a href="sprint-03.html">Sprint 3</a><a href="sprint-06.html">Sprint 6</a><a href="risks.html">Risks</a><a href="retrospective.html">Retrospective</a></nav>
+<a class="cta" href="https://github.com/Mrunali121/NexusCRM-PM" target="_blank" rel="noopener">GitHub</a></header>
+<div class="layout">
+<aside class="rail" aria-label="Lifecycle documents"><details open><summary>All 18 documents</summary><h4>Initiate</h4><a href="business-case.html"><i>01</i>Business case</a><a href="charter.html"><i>02</i>Project charter</a><a href="stakeholders.html"><i>03</i>Stakeholders</a><a href="raci.html"><i>04</i>RACI matrix</a><h4>Plan</h4><a href="requirements.html"><i>05</i>Requirements</a><a href="wbs.html"><i>06</i>WBS</a><a href="backlog.html"><i>07</i>Product backlog</a><a href="roadmap.html"><i>08</i>Roadmap</a><a href="release-plan.html"><i>09</i>Release plan</a><h4>Execute</h4><a href="sprints.html"><i>10</i>Sprint plans</a><a href="sprint-03.html"><i>10a</i>Sprint 3: a risk happens</a><a href="sprint-06.html"><i>10b</i>Sprint 6: a scope trade-off</a><h4>Control</h4><a href="risks.html"><i>11</i>Risks & issues</a><a href="dependencies.html"><i>12</i>Dependencies</a><a href="status-reports.html"><i>13</i>Status reports</a><h4>Close</h4><a href="uat.html" aria-current="page"><i>14</i>UAT plan</a><a href="go-live.html"><i>15</i>Go-live checklist</a><a href="retrospective.html"><i>16</i>Retrospective</a></details></aside>
+<main>
+<header class="pagehead"><div class="eyebrow">Close · Document 14</div><h1>UAT Plan</h1><p>Entry and exit criteria, ten test scenarios, severity classes.</p></header><div class="doc"><h2>Purpose</h2>
+<p>Validate that NexusCRM meets real-world business needs from the perspective of
+actual end users, ahead of each release go-live decision.</p>
+<h2>Scope</h2>
+<ul>
+<li><strong>Release 1 UAT:</strong> Sales team (2 power-users + 1 sales manager)</li>
+<li><strong>Release 2 UAT:</strong> Sales team (same group) + Customer Success (2 users)</li>
+</ul>
+<h2>Entry Criteria</h2>
+<ul>
+<li>All Must-priority backlog items for the release are complete and deployed to staging</li>
+<li>0 open critical bugs from internal QA</li>
+<li>Test scenarios reviewed and approved by the PM</li>
+</ul>
+<h2>Exit Criteria</h2>
+<ul>
+<li>100% of Must-priority test scenarios pass</li>
+<li>≥ 90% of Should-priority test scenarios pass, with any failures logged and
+  triaged as either fix-before-launch or accepted-and-deferred by the Sponsor</li>
+<li>0 open critical or high-severity defects</li>
+</ul>
+<h2>Test Scenarios (representative sample)</h2>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Scenario</th>
+<th>Priority</th>
+<th>Release</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>UAT-01</td>
+<td>Create a new contact, verify duplicate-detection warning triggers correctly</td>
+<td>Must</td>
+<td>R1</td>
+</tr>
+<tr>
+<td>UAT-02</td>
+<td>Move a deal through all pipeline stages via drag-and-drop with no reload</td>
+<td>Must</td>
+<td>R1</td>
+</tr>
+<tr>
+<td>UAT-03</td>
+<td>Deactivate a user and confirm their historical activity log is preserved</td>
+<td>Must</td>
+<td>R1</td>
+</tr>
+<tr>
+<td>UAT-04</td>
+<td>Bulk import 200 contacts via CSV with field mapping</td>
+<td>Should</td>
+<td>R1</td>
+</tr>
+<tr>
+<td>UAT-05</td>
+<td>View live pipeline dashboard and confirm figures match manual spot-check</td>
+<td>Must</td>
+<td>R2</td>
+</tr>
+<tr>
+<td>UAT-06</td>
+<td>Export a report as PDF and confirm formatting is usable for a leadership deck</td>
+<td>Should</td>
+<td>R2</td>
+</tr>
+<tr>
+<td>UAT-07</td>
+<td>Send and receive an email from within a contact record, confirm it logs to the timeline</td>
+<td>Must</td>
+<td>R2</td>
+</tr>
+<tr>
+<td>UAT-08</td>
+<td>Trigger a Zapier automation on deal-won and confirm downstream action fires</td>
+<td>Should</td>
+<td>R2</td>
+</tr>
+<tr>
+<td>UAT-09</td>
+<td>Submit a right-to-erasure request and confirm the record is purged per policy</td>
+<td>Must</td>
+<td>R2</td>
+</tr>
+<tr>
+<td>UAT-10</td>
+<td>Run the migration dry-run and confirm the report flags a known duplicate correctly</td>
+<td>Must</td>
+<td>R2</td>
+</tr>
+</tbody>
+</table>
+<h2>Defect Severity Classification</h2>
+<table>
+<thead>
+<tr>
+<th>Severity</th>
+<th>Definition</th>
+<th>Handling</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Critical</td>
+<td>Blocks a Must-priority workflow entirely</td>
+<td>Must fix before go-live</td>
+</tr>
+<tr>
+<td>High</td>
+<td>Significant usability issue, workaround exists</td>
+<td>Fix before go-live unless Sponsor accepts risk</td>
+</tr>
+<tr>
+<td>Medium</td>
+<td>Minor usability issue</td>
+<td>Logged, fixed in next sprint</td>
+</tr>
+<tr>
+<td>Low</td>
+<td>Cosmetic</td>
+<td>Logged, backlog</td>
+</tr>
+</tbody>
+</table>
+<h2>Sign-off</h2>
+<p>Each release requires written sign-off from the UAT participant group lead
+(Sales Manager for Release 1; Sales Manager + Head of Customer Success for
+Release 2) before the go/no-go review proceeds.</p><div class="pager"><a href="status-reports.html">&larr; Status reports</a><a href="go-live.html">Go-live checklist &rarr;</a></div></div>
+<footer><span>NexusCRM is a self-directed portfolio case study. Company, team and data are illustrative.</span><span><a href="https://github.com/Mrunali121/NexusCRM-PM" target="_blank" rel="noopener">GitHub</a> · <a href="https://mrunali121.github.io/" target="_blank" rel="noopener">Portfolio</a></span></footer>
+</main>
+</div>
+</body>
+</html>

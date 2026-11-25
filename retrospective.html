@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Retrospective | NexusCRM Case Study</title>
+<meta name="description" content="What worked, what did not, and who owns each action.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,600;0,700;1,600&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site.css">
+</head>
+<body>
+<header class="topbar"><a class="brand" href="index.html">Nexus<b>CRM</b></a>
+<nav aria-label="Main"><a href="index.html">Overview</a><a href="sprint-03.html">Sprint 3</a><a href="sprint-06.html">Sprint 6</a><a href="risks.html">Risks</a><a href="retrospective.html">Retrospective</a></nav>
+<a class="cta" href="https://github.com/Mrunali121/NexusCRM-PM" target="_blank" rel="noopener">GitHub</a></header>
+<div class="layout">
+<aside class="rail" aria-label="Lifecycle documents"><details open><summary>All 18 documents</summary><h4>Initiate</h4><a href="business-case.html"><i>01</i>Business case</a><a href="charter.html"><i>02</i>Project charter</a><a href="stakeholders.html"><i>03</i>Stakeholders</a><a href="raci.html"><i>04</i>RACI matrix</a><h4>Plan</h4><a href="requirements.html"><i>05</i>Requirements</a><a href="wbs.html"><i>06</i>WBS</a><a href="backlog.html"><i>07</i>Product backlog</a><a href="roadmap.html"><i>08</i>Roadmap</a><a href="release-plan.html"><i>09</i>Release plan</a><h4>Execute</h4><a href="sprints.html"><i>10</i>Sprint plans</a><a href="sprint-03.html"><i>10a</i>Sprint 3: a risk happens</a><a href="sprint-06.html"><i>10b</i>Sprint 6: a scope trade-off</a><h4>Control</h4><a href="risks.html"><i>11</i>Risks & issues</a><a href="dependencies.html"><i>12</i>Dependencies</a><a href="status-reports.html"><i>13</i>Status reports</a><h4>Close</h4><a href="uat.html"><i>14</i>UAT plan</a><a href="go-live.html"><i>15</i>Go-live checklist</a><a href="retrospective.html" aria-current="page"><i>16</i>Retrospective</a></details></aside>
+<main>
+<header class="pagehead"><div class="eyebrow">Close · Document 16</div><h1>Retrospective</h1><p>What worked, what did not, and who owns each action.</p></header><div class="doc"><p><strong>Format:</strong> Start / Stop / Continue, run at project close (Week 18) with the full
+9-person team plus the Data Privacy Officer.</p>
+<h2>What went well</h2>
+<ul>
+<li>Locking Must/Should/Could priorities at the charter stage (R-06 mitigation) meant
+  scope trade-offs during the project — like the PDF export deferral in Sprint 6 —
+  were fast, low-drama decisions instead of late renegotiations.</li>
+<li>Embedding Sales power-users from requirements workshops through UAT caught real
+  workflow issues early (FR-09, drag-and-drop performance) and drove strong Day-1
+  adoption — 14/14 users active with the spreadsheet workflow fully retired within
+  2 weeks of Release 1.</li>
+<li>Booking external dependencies (audit firm, legal review) with deliberate buffer
+  time meant neither one caused a schedule slip, even though both surfaced
+  real issues (I-01, I-02, and the audit's minor findings).</li>
+<li>Weekly status reports with explicit risk/issue callouts kept the Sponsor and
+  Steering Committee informed without needing extra ad-hoc meetings.</li>
+</ul>
+<h2>What didn't go well</h2>
+<ul>
+<li>Shared platform components (like the WebSocket service behind Sprint 3) weren't
+  mapped against <em>all</em> their downstream consumers at the time they were built —
+  only found the audit-logging interaction reactively, causing Issue I-01.</li>
+<li>Third-party library licensing wasn't a standing check at sprint planning, which
+  meant the PDF export licensing issue (I-02) was discovered mid-sprint rather
+  than anticipated.</li>
+<li>Release 2's UAT group (Customer Success) was brought in later than Sales — in
+  hindsight, earlier CS involvement during Sprint 5–6 requirements refinement
+  could have caught reporting-view feedback sooner.</li>
+</ul>
+<h2>Action items</h2>
+<table>
+<thead>
+<tr>
+<th>Action</th>
+<th>Owner</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Map all downstream consumers for any shared platform component before it's built, not just the current sprint's</td>
+<td>PM + Eng Director</td>
+<td>Adopted as a standing design-phase step</td>
+</tr>
+<tr>
+<td>Add third-party licensing check as a standing sprint-planning item whenever a new dependency is introduced</td>
+<td>PM</td>
+<td>Adopted</td>
+</tr>
+<tr>
+<td>Bring secondary user groups (like CS) into requirements refinement at the same stage as primary users, not just at UAT</td>
+<td>PM</td>
+<td>Adopted for next project</td>
+</tr>
+<tr>
+<td>Keep the "buffer time on external dependencies" practice — it protected the schedule twice</td>
+<td>PM</td>
+<td>Carried forward as standard practice</td>
+</tr>
+</tbody>
+</table>
+<h2>Outcome</h2>
+<p>Both releases shipped on schedule (Week 8, Week 16). 0 critical bugs at either
+go-live. Duplicate contact rate came in at 1.8% against a 3% target. Legacy system
+decommissioned cleanly in Week 18 with no rollback needed.</p><div class="pager"><a href="go-live.html">&larr; Go-live checklist</a><a href="index.html">Back to overview &rarr;</a></div></div>
+<footer><span>NexusCRM is a self-directed portfolio case study. Company, team and data are illustrative.</span><span><a href="https://github.com/Mrunali121/NexusCRM-PM" target="_blank" rel="noopener">GitHub</a> · <a href="https://mrunali121.github.io/" target="_blank" rel="noopener">Portfolio</a></span></footer>
+</main>
+</div>
+</body>
+</html>

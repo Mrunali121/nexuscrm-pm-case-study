@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Business Case | NexusCRM Case Study</title>
+<meta name="description" content="Why build it: the problem, the options considered, and the recommendation.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,600;0,700;1,600&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site.css">
+</head>
+<body>
+<header class="topbar"><a class="brand" href="index.html">Nexus<b>CRM</b></a>
+<nav aria-label="Main"><a href="index.html">Overview</a><a href="sprint-03.html">Sprint 3</a><a href="sprint-06.html">Sprint 6</a><a href="risks.html">Risks</a><a href="retrospective.html">Retrospective</a></nav>
+<a class="cta" href="https://github.com/Mrunali121/NexusCRM-PM" target="_blank" rel="noopener">GitHub</a></header>
+<div class="layout">
+<aside class="rail" aria-label="Lifecycle documents"><details open><summary>All 18 documents</summary><h4>Initiate</h4><a href="business-case.html" aria-current="page"><i>01</i>Business case</a><a href="charter.html"><i>02</i>Project charter</a><a href="stakeholders.html"><i>03</i>Stakeholders</a><a href="raci.html"><i>04</i>RACI matrix</a><h4>Plan</h4><a href="requirements.html"><i>05</i>Requirements</a><a href="wbs.html"><i>06</i>WBS</a><a href="backlog.html"><i>07</i>Product backlog</a><a href="roadmap.html"><i>08</i>Roadmap</a><a href="release-plan.html"><i>09</i>Release plan</a><h4>Execute</h4><a href="sprints.html"><i>10</i>Sprint plans</a><a href="sprint-03.html"><i>10a</i>Sprint 3: a risk happens</a><a href="sprint-06.html"><i>10b</i>Sprint 6: a scope trade-off</a><h4>Control</h4><a href="risks.html"><i>11</i>Risks & issues</a><a href="dependencies.html"><i>12</i>Dependencies</a><a href="status-reports.html"><i>13</i>Status reports</a><h4>Close</h4><a href="uat.html"><i>14</i>UAT plan</a><a href="go-live.html"><i>15</i>Go-live checklist</a><a href="retrospective.html"><i>16</i>Retrospective</a></details></aside>
+<main>
+<header class="pagehead"><div class="eyebrow">Initiate · Document 01</div><h1>Business Case</h1><p>Why build it: the problem, the options considered, and the recommendation.</p></header><div class="doc"><p><strong>Company:</strong> Meridian Software (B2B SaaS vendor)
+<strong>Prepared by:</strong> Project Manager
+<strong>Audience:</strong> Executive Steering Committee</p>
+<h2>1. Problem Statement</h2>
+<p>Meridian's existing customer management tooling is a patchwork of a legacy in-house
+contact database and three disconnected spreadsheets used by Sales and Customer
+Success. This causes:
+- Duplicate and stale customer records (est. 18% of contact records are duplicates)
+- No single view of deal pipeline across the 14-person sales team
+- Manual, error-prone monthly reporting to leadership (avg. 6 person-hours/month)
+- Inability to integrate with email or third-party tools, blocking a planned
+  Customer Success automation initiative</p>
+<h2>2. Market Opportunity</h2>
+<p>Customer interviews (9 existing accounts) and a competitive review of 4 comparable
+SMB CRM products confirmed demand for a lightweight, integration-friendly CRM as
+both an internal tool and — pending internal rollout success — a potential future
+customer-facing product line.</p>
+<h2>3. Options Considered</h2>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Pros</th>
+<th>Cons</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A — Buy an existing CRM (e.g. HubSpot, Pipedrive)</td>
+<td>Fast to deploy, proven</td>
+<td>Recurring per-seat cost at scale, limited fit with internal data model, GDPR data residency review required for any EU customer data touched by a third party</td>
+</tr>
+<tr>
+<td>B — Build NexusCRM in-house</td>
+<td>Full control of data residency (important given GDPR and EU customer base), extensible foundation for future product line, one-time investment</td>
+<td>Requires internal engineering capacity, longer time to first value</td>
+</tr>
+<tr>
+<td>C — Do nothing</td>
+<td>No cost</td>
+<td>Status quo problems compound; blocks the CS automation initiative already committed to leadership</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Recommendation:</strong> Option B. The one-time build cost is recovered within ~14 months
+via reduced reporting overhead and reclaimed sales admin time, and it removes the
+GDPR data-residency question entirely by keeping customer data in Meridian's
+existing EU-hosted infrastructure.</p>
+<h2>4. High-Level Cost-Benefit</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Estimate</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>One-time build cost (team time, 16 weeks)</td>
+<td>~420 person-days</td>
+</tr>
+<tr>
+<td>Ongoing hosting/maintenance</td>
+<td>Comparable to current legacy DB hosting</td>
+</tr>
+<tr>
+<td>Annual savings (reporting time, reduced duplicate cleanup, no per-seat licensing)</td>
+<td>~70 person-days/year</td>
+</tr>
+<tr>
+<td>Payback period</td>
+<td>~14 months</td>
+</tr>
+</tbody>
+</table>
+<h2>5. Strategic Fit</h2>
+<p>Directly enables the CS automation initiative already on the FY roadmap, and
+establishes a data foundation that could later be productized — flagged to the
+Steering Committee as a possible Phase 3 (post-MVP) direction, explicitly out of
+scope for this project.</p>
+<h2>6. Recommendation</h2>
+<p>Approve NexusCRM as a 16-week, two-release internal build, governed by the attached
+<a href="charter.html">Project Charter</a>.</p><div class="pager"><a href="index.html">&larr; Overview</a><a href="charter.html">Project charter &rarr;</a></div></div>
+<footer><span>NexusCRM is a self-directed portfolio case study. Company, team and data are illustrative.</span><span><a href="https://github.com/Mrunali121/NexusCRM-PM" target="_blank" rel="noopener">GitHub</a> · <a href="https://mrunali121.github.io/" target="_blank" rel="noopener">Portfolio</a></span></footer>
+</main>
+</div>
+</body>
+</html>
